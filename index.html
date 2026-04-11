@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opa Shred Weather</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>Opa Shred Ride Weather</h1>
+        <p>
+          Live weather for key locations and bike parks. Check wind, rain,
+          temperature, humidity, and whether it was raining recently.
+        </p>
+      </header>
+
+      <section class="controls" aria-label="Weather controls">
+        <label for="locationSelect">Location or bike park</label>
+        <select id="locationSelect"></select>
+        <button id="refreshBtn" type="button">Refresh</button>
+      </section>
+
+      <section id="status" class="status" aria-live="polite"></section>
+
+      <section id="weatherCard" class="weather-card hidden" aria-label="Weather data">
+        <h2 id="placeName"></h2>
+        <p id="updatedAt" class="muted"></p>
+
+        <div class="grid">
+          <article class="metric">
+            <h3>Temperature</h3>
+            <p id="temperature">--</p>
+          </article>
+
+          <article class="metric">
+            <h3>Wind</h3>
+            <p id="wind">--</p>
+          </article>
+
+          <article class="metric">
+            <h3>Rain now</h3>
+            <p id="rainNow">--</p>
+          </article>
+
+          <article class="metric">
+            <h3>Humidity</h3>
+            <p id="humidity">--</p>
+          </article>
+
+          <article class="metric metric--wide">
+            <h3>Moisture conditions</h3>
+            <p id="moisture">--</p>
+          </article>
+
+          <article class="metric metric--wide">
+            <h3>Was it raining before?</h3>
+            <p id="rainingBefore">--</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
