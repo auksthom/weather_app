@@ -1,7 +1,10 @@
-# Opa Shred Weather Widget
+# Opa Shred Weather (Minimal Streamlit)
 
-Simple embeddable weather app for a Wix page. It shows weather for preset UK cities and bike parks, including:
+Minimal Streamlit weather app for embedding in Wix.
 
+## Features
+
+- Preset UK locations and bike parks
 - Temperature
 - Wind speed
 - Rain now
@@ -9,21 +12,26 @@ Simple embeddable weather app for a Wix page. It shows weather for preset UK cit
 - Moisture conditions (trail grip estimate)
 - Whether it was raining recently (last 3 hours)
 
-## Data source
+## Run locally
 
-Uses [Open-Meteo](https://open-meteo.com/) public forecast API.
+```bash
+pip install -r requirements.txt
+streamlit run streamlit_app.py
+```
 
-## Use in Wix
+## Deploy + embed in Wix
 
-1. Upload `index.html`, `styles.css`, and `app.js` to your hosting.
-2. In Wix Editor, add **Embed Code** / **Embed a Widget**.
-3. Paste the hosted `index.html` URL.
+1. Deploy this app to Streamlit Community Cloud (public app).
+2. Copy the public app URL, for example:
+   `https://your-app-name.streamlit.app/?embed=true`
+3. In Wix editor, add **Embed Site** (HTML iframe).
+4. Paste the Streamlit URL in the iframe settings.
 
 ## Custom locations
 
-Edit the `places` array in `app.js` and set:
+Edit `PLACES` in `streamlit_app.py` and set:
 
 - `name`
-- `type` (e.g., Bike Park / City)
+- `type` (Bike Park / City)
 - `lat`
 - `lon`
